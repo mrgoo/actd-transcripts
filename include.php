@@ -202,7 +202,7 @@ function get_transcript_list($folder, $default_date_raw = null) {
 	if (is_dir($folder)) {
 		if ($dh = opendir($folder)) {
 			while (($file = readdir($dh)) !== false) {
-				if (preg_match("@#ST_StationMissions_(\d{4})(\d{2})(\d{2}).log@msi", $file, $file_match)) {
+				if (preg_match("@#ArcadiaOOM_(\d{4})(\d{2})(\d{2}).log@msi", $file, $file_match)) {
 					$file_date_string = "{$file_match[1]}-{$file_match[2]}-{$file_match[3]}";
 					$ts = strtotime($file_date_string);
 					$sd_year = date("y",$ts) + 100;
